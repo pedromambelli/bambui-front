@@ -1,0 +1,7 @@
+
+@media screen and (min-aspect-ratio: 1/1) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .min-h-gt-sm{
+    min-height: 600px;
+  }
+}

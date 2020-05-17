@@ -1,31 +1,12 @@
 {
   "name": "dash",
   "version": "1.0.0",
-  "description": "",
+  "description": "Angular Bootstrap Dashboard is a web dashboard application based on Bootstrap and AngularJS.  All components included in this dashboard template has been developed to bring all the potential of HTML5 and Bootstrap plus a set of new features (JS and CSS) ideal for your next dashboard admin theme or admin web app project.  Angular Bootstrap Dashboard can be used in any type of web applications dashboard.  Angular Bootstrap Dashboard uses ui-router for routing purposes.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "@types/jest": "^25.2.2",
-    "@types/node": "^14.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.29.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard-with-typescript": "^16.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "git-commit-msg-linter": "^2.4.2",
-    "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "lint-staged": "^10.1.7",
-    "ts-jest": "^26.0.0",
-    "typescript": "^3.9.2"
-  }
+  "license": "ISC"
 }

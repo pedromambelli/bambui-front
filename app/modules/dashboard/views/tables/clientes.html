@@ -1,0 +1,45 @@
+
+  <div class="box-header with-border" >
+    <div layout='row' layout-align='start start'>
+      <h1 class="display-1" flex='80' layout-fill>Clientes</h1>
+      <input type="text" class="pull-right form-control" placeholder="Search..." ng-model='vm.table.filter' flex='30'>
+
+    </div>
+
+
+
+
+  </div><!-- /.box-header -->
+  <div class="box-body box-profile h-100" style="align-items:stretch" >
+
+
+    <!-- exact table from live demo -->
+    <md-table-container  ng-init='vm.table.onInit()'>
+      <table md-table md-row-select ng-model="vm.table.selectedRows" md-progress="promise">
+        <thead md-head md-order="vm.table.order" >
+          <tr md-row>
+            <!-- <th md-column md-order-by="_id"><span>Id</span></th> -->
+            <th md-column md-order-by="nome"><span>Nome</span></th>
+            <th md-column md-numeric md-order-by="numero_documento"><span>CPF</span></th>
+            <th ng-show='!vm.form.visible' md-column >Telefone</th>
+            <th ng-show='!vm.form.visible' md-column >Email</th>
+            <th md-column>Pontos</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="cliente" md-select-id="name" md-auto-select ng-repeat="cliente in vm.clientesList | orderBy: vm.table.order  | filter : vm.table.filter track by cliente.cpf" md-on-select='vm.table.onRowSelect' md-on-deselect='vm.table.onRowDeselect'>
+            <!-- <td md-cell>{{cliente._id}}</td> -->
+            <td md-cell >{{cliente.nome}}</td>
+            <td md-cell >{{cliente.cpf}}</td>
+            <td ng-show='!vm.form.visible' md-cell >{{cliente.phone}}</td>
+            <td ng-show='!vm.form.visible' md-cell>{{cliente.email}}</td>
+            <td md-cell>{{cliente.sumPontos}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-table-pagination md-limit="vm.table.page_limit" md-limit-options="[5, 10, 15]" md-page="vm.table.page" md-total="{{vm.crud.list.length}}"  md-page-select md-boundary-links></md-table-pagination>
+
+
+  </div><!-- /.box-body -->

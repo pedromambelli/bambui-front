@@ -1,0 +1,49 @@
+<!--
+Author: Ranjithprabhu K
+Page Description: About Me page
+Date: 05 Jan 2016
+-->
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+
+    <!-- Tabela de clientes -->
+    <div name='tabelaclientes' ng-class="{'col-md-6' : vm.form.visible, 'col-md-9' : !vm.form.visible }">
+      <div class="box box-primary " ng-include='"./app/modules/dashboard/views/tables/clientes.html"'>
+      </div><!-- /.box -->
+    </div><!-- /.col -->
+
+    <div ng-class="{'col-md-6' : vm.form.visible, 'col-md-3' : !vm.form.visible }">
+      <div ng-show='!vm.form.visible'>
+
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Clientes</span>
+            <span class="info-box-number" ng-model='vm.table.count'>{{vm.table.count}}</span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="fa fa-star"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Pontos Distribuídos</span>
+            <span class="info-box-number" ng-model='vm.table.count'>{{vm.table.sumPontos}}</span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div>
+
+      <!-- Formulário de clientes -->
+      <div ng-show='vm.form.visible' class="box box-primary"
+        ng-include='"./app/modules/dashboard/views/forms/clientes.html"'>
+      </div>
+      <div ng-show='vm.form.visible' class="box box-primary"
+        ng-include='"./app/modules/dashboard/views/tables/cliente-historico.html"'>
+      </div>
+
+    </div>
+
+
+  </div><!-- /.row -->
+</section><!-- /.content -->

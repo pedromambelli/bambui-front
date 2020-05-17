@@ -1,0 +1,45 @@
+
+  <div class="box-header with-border" >
+    <div layout='row' layout-align='start start'>
+      <h1 class="display-1" flex='80' layout-fill>Atendentes</h1>
+      <input type="text" class="pull-right form-control" placeholder="Search..." ng-model='vm.table.filter' flex='30'>
+
+    </div>
+
+
+
+
+  </div><!-- /.box-header -->
+  <div class="box-body box-profile h-100" style="align-items:stretch" >
+
+
+    <!-- exact table from live demo -->
+    <md-table-container  ng-init= "vm.tableOnReady()">
+      <table md-table md-row-select ng-model="vm.table.selectedRows" md-progress="promise">
+        <thead md-head md-order="vm.table.order" >
+          <tr md-row>
+            <!-- <th md-column md-order-by="_id"><span>Id</span></th> -->
+            <th md-column md-order-by="nome"><span>Nome</span></th>
+            <th md-column md-numeric md-order-by="cpf"><span>CPF</span></th>
+            <th md-column >Pontos Distribuídos</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="atendente" md-select-id="nome" md-auto-select 
+            ng-repeat="atendente in vm.atendentesList  | orderBy: vm.table.order | filter: vm.table.filter track by atendente.cpf" 
+              md-on-select='vm.table.onRowSelect' md-on-deselect='vm.table.onRowDeselect'>
+            <!-- <td md-cell>{{atendente._id}}</td> -->
+            <td md-cell >{{atendente.nome}}</td>
+            <td md-cell >{{atendente.cpf}}</td>
+            <td md-cell >{{atendente.pontosDistribuidos}}</td>
+            <td md-cell >
+              <md-button class="md-fab md-warn md-mini" ng-click='vm.crud.setToDelete(atendente); $event.stopPropagation();'>
+                <i class="fa fa-trash"></i>
+              </md-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+  </div><!-- /.box-body -->

@@ -1,0 +1,45 @@
+<div class="box-header with-border">
+  <h3 ng-if='vm.crud.target.isNew' class="box-title">Novo cliente</h3>
+  <h3 ng-if='!vm.crud.target.isNew' class="box-title">{{vm.crud.target.nome}}</h3>
+
+
+</div><!-- /.box-header -->
+<div class="box-body box-primary">
+  <form data-ng-submit="vm.crud.add()" name="vm.crudform">
+    <!-- <md-content > -->
+
+
+    
+    <div layout='column' layout-gt-sm='row'>
+      <!-- Email -->
+      <md-input-container class="md-icon-float" flex>
+        <label>Email</label>
+        <md-icon class="fa fa-envelope"></md-icon>
+        <input type="email" required id="email" ng-model="vm.crud.target.email">
+      </md-input-container>
+    <!-- </div> -->
+    <!-- <div layout='column' layout-gt-sm='row'> -->
+      <!-- phone -->
+      <md-input-container class="md-icon-float" flex>
+        <label>Phone</label>
+        <md-icon class="fa fa-phone"></md-icon>
+        <input type="text" required id="phone" ng-model="vm.crud.target.phone">
+      </md-input-container>
+    </div>
+
+
+    <!-- </md-content> -->
+    <!-- Form Actions -->
+    <div layout='row' layout-align='space-between center'>
+      <md-button class="md-raised md-warn" ng-click='vm.crud.clear()' ng-show='vm.crud.target.isNew'>
+        <i class="fa fa-trash"></i>Limpar
+      </md-button>
+      <md-button class="md-raised md-warn" ng-click='vm.form.hide()' ng-show='!vm.crud.target.isNew'>
+        <i class="fa fa-angle-double-left"></i>Cancelar
+      </md-button>
+      <md-button class="md-raised md-primary" ng-click='vm.crud.add()'>
+        Salvar<i class="fa fa-angle-double-right"></i>
+      </md-button>
+    </div>
+  </form>
+</div>
