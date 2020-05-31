@@ -1,0 +1,47 @@
+<!--
+Author: Ranjithprabhu K
+Page Description: About Me page
+Date: 05 Jan 2016
+-->
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+
+    <!-- Tabela de premios -->
+    <div name='tabelapremios' class="col-md-8" style="height: 98vh; overflow-y: hidden;">
+      <div class="box box-primary " ng-include='"./app/modules/dashboard/views/tables/premios.html"'>
+      </div><!-- /.box -->
+    </div><!-- /.col -->
+
+    <div class="col-md-4">
+      <div ng-show='!vm.form.visible'>
+
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Prêmios</span>
+            <span class="info-box-number" ng-model='vm.table.count'>{{vm.table.count}}</span>
+            <span class="float-right">
+              <a class="btn btn-primary btn-sm " style='float:right'
+                ng-click='vm.crud.clear(); vm.form.show()'>Cadastrar
+                Prêmio</a>
+            </span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div>
+
+      <!-- Formulário de premios -->
+      <div ng-show='vm.form.visible' class="box box-primary"
+        ng-include='"./app/modules/dashboard/views/forms/premios.html"'>
+      </div>
+      <!-- <div ng-show='vm.form.visible' class="box box-primary"
+        ng-include='"./app/modules/dashboard/views/tables/cliente-historico.html"'>
+      </div> -->
+
+    </div>
+
+
+  </div><!-- /.row -->
+</section><!-- /.content -->

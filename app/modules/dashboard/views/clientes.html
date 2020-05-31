@@ -10,12 +10,12 @@ Date: 05 Jan 2016
   <div class="row">
 
     <!-- Tabela de clientes -->
-    <div name='tabelaclientes' ng-class="{'col-md-6' : vm.form.visible, 'col-md-9' : !vm.form.visible }">
+    <div name='tabelaclientes' class="col-md-9" style="height: 98vh; overflow-y: hidden;">
       <div class="box box-primary " ng-include='"./app/modules/dashboard/views/tables/clientes.html"'>
       </div><!-- /.box -->
     </div><!-- /.col -->
 
-    <div ng-class="{'col-md-6' : vm.form.visible, 'col-md-3' : !vm.form.visible }">
+    <div class="col-md-3">
       <div ng-show='!vm.form.visible'>
 
         <div class="info-box">
@@ -23,13 +23,10 @@ Date: 05 Jan 2016
           <div class="info-box-content">
             <span class="info-box-text">Clientes</span>
             <span class="info-box-number" ng-model='vm.table.count'>{{vm.table.count}}</span>
-          </div><!-- /.info-box-content -->
-        </div><!-- /.info-box -->
-        <div class="info-box">
-          <span class="info-box-icon bg-aqua"><i class="fa fa-star"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Pontos Distribuídos</span>
-            <span class="info-box-number" ng-model='vm.table.count'>{{vm.table.sumPontos}}</span>
+            <span class="float-right">
+              <a class="btn btn-primary btn-sm " style='float:right' ng-click='vm.crud.clear(); vm.form.show()'>Cadastrar
+                Cliente</a>
+            </span>
           </div><!-- /.info-box-content -->
         </div><!-- /.info-box -->
       </div>
@@ -38,9 +35,9 @@ Date: 05 Jan 2016
       <div ng-show='vm.form.visible' class="box box-primary"
         ng-include='"./app/modules/dashboard/views/forms/clientes.html"'>
       </div>
-      <div ng-show='vm.form.visible' class="box box-primary"
+      <!-- <div ng-show='vm.form.visible' class="box box-primary"
         ng-include='"./app/modules/dashboard/views/tables/cliente-historico.html"'>
-      </div>
+      </div> -->
 
     </div>
 

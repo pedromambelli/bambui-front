@@ -9,7 +9,7 @@
 
  ===========================================================*/
 
-var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'flash', 'md.data.table', 'ui.utils.masks', 'ngMaterial',
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'flash', 'md.data.table', 'ui.utils.masks', 'ngMaterial', 
     //main modules
     'login', 'dashboard']);
 

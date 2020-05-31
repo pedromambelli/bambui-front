@@ -8,7 +8,22 @@
   <form data-ng-submit="vm.crud.add()" name="vm.crudform">
     <!-- <md-content > -->
 
-
+    <div layout='column' layout-gt-sm='row'>
+      <!-- Nome -->
+      <md-input-container class="md-icon-float" flex>
+        <label>Email</label>
+        <md-icon class="fa fa-user"></md-icon>
+        <input type="text" required id="nome" ng-model="vm.crud.target.nome">
+      </md-input-container>
+    </div>
+    <div layout='column' layout-gt-sm='row'>
+      <!-- CPF -->
+      <md-input-container class="md-icon-float" flex>
+        <label>CPf</label>
+        <md-icon class="fa fa-id-card"></md-icon>
+        <input type="text" required id="cpf" ng-model="vm.crud.target.cpf">
+      </md-input-container>
+    </div>
     
     <div layout='column' layout-gt-sm='row'>
       <!-- Email -->
@@ -17,8 +32,8 @@
         <md-icon class="fa fa-envelope"></md-icon>
         <input type="email" required id="email" ng-model="vm.crud.target.email">
       </md-input-container>
-    <!-- </div> -->
-    <!-- <div layout='column' layout-gt-sm='row'> -->
+    </div>
+    <div layout='column' layout-gt-sm='row'>
       <!-- phone -->
       <md-input-container class="md-icon-float" flex>
         <label>Phone</label>

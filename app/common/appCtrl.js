@@ -125,8 +125,8 @@ function ($rootScope, $scope, $state, $location, Flash, appSettings) {
             state: "clientes"
         },
         {
-            title: "Pontos",
-            icon: "star",
+            title: "Histórico",
+            icon: "calendar",
             state: "pontos"
         },
         {

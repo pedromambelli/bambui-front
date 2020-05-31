@@ -1,0 +1,14 @@
+<md-grid-list md-cols="3" md-row-height="1:1" md-gutter='1em'>
+  <md-grid-tile>
+    <input id='imageInput' type='file' class="ng-hide" ng-model-instant
+      onchange="angular.element(this).scope().imageUpload(event)" multiple />
+    <img src="../../../../../images/upload-image.png" class="image-tile" layout-fill
+      onclick='document.getElementById("imageInput").click()' />
+  </md-grid-tile>
+  <md-grid-tile ng-repeat='image in vm.crud.target.images track by $index' >
+    <img ng-src="{{image}}" layout-fill class="image-tile"/>
+    <a class=" md-mini top-right-btn" ng-click='vm.crud.removeImage($index); $event.stopPropagation();'>
+      <i class="fa fa-times"></i>
+    </a>
+  </md-grid-tile>
+</md-grid-list>

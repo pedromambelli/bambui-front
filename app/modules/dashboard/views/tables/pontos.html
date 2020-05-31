@@ -1,0 +1,38 @@
+  <div class="box-header with-border">
+    <div layout='row' layout-align='start start'>
+      <h1 class="display-1" layout-fill>Histórico</h1>
+      <md-input-container style="margin-right: 10px;" >
+        <!-- <label>Size</label> -->
+        <md-radio-group ng-model="vm.selectedDate" ng-change='vm.setDateFrom()' layout='row'>
+          <md-radio-button ng-repeat="vigencia in vm.opcoesVigencia" value="{{vigencia.dateFrom}}">{{vigencia.name}}</md-radio-button>
+        </md-radio-group>
+      </md-input-container>
+    </div>
+  </div><!-- /.box-header -->
+ <div class="box-body box-profile h-100" style="height: 80vh; overflow-y: scroll;" flex>
+
+
+    <!-- exact table from live demo -->
+    <md-table-container  ng-init= "vm.tableOnInit()">
+      <table md-table md-row-select ng-model="vm.table.selectedRows" md-progress="promise">
+        <thead md-head md-order="vm.table.order" >
+          <tr md-row>
+            <!-- <th md-column md-order-by="_id"><span>Id</span></th> -->
+            <th md-column md-order-by="data" ><span>Data</span></th>
+            <th md-column md-order-by="nomeCliente" ><span>Cliente</span></th>
+            <th md-column colspan="2">Evento</th>
+            
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row ng-repeat="op in vm.historico  | orderBy: vm.table.order | dateFilter:vm.dateFrom:vm.dateTo track by $index">
+            <!-- <td md-cell>{{op._id}}</td> -->
+            <td md-cell  >{{op.data}}</td>
+            <td md-cell >{{op.nomeCliente}}</td>
+            <td md-cell colspan="2">Ganhou: {{op.pontos}} pontos</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+  </div><!-- /.box-body -->

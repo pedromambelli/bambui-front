@@ -1,0 +1,76 @@
+<div class="box-header with-border">
+  <h3 ng-if='vm.crud.target.isNew' class="box-title">Novo Prêmio</h3>
+  <h3 ng-if='!vm.crud.target.isNew' class="box-title">{{vm.crud.target.nome}}</h3>
+
+
+</div><!-- /.box-header -->
+<div class="box-body box-primary">
+  
+  <form data-ng-submit="vm.crud.add()" name="vm.crudform">
+    <!-- <md-content > -->
+    <div layout='column' >  
+
+      <!-- <div layout="row" layout-align="center" ng-cloak style="margin-bottom: 1rm;">
+        <div class="col-md-5" ng-show='!vm.crud.target.images.length'>
+          <img src="../../../../../images/upload-image.png" style="width: 100%; height: 100%;"
+            onclick='document.getElementById("imageInput").click()' />
+        </div>
+        <div class="col-md-5" ng-show='vm.crud.target.images.length'>
+          <img src="../../../../../images/multiprecos.png" style="width: 100%; height: 80%;" />
+        </div>
+      </div> -->
+      
+      <div layout='row'> 
+        <!-- Imagens -->
+        <div class="box" ng-include='"./app/modules/dashboard/views/image-upload/premios-images-upload.html"'>
+        </div>
+      </div>
+      
+
+      <div layout='row'>
+        <!-- Nome -->
+        <md-input-container  flex>
+          <label>Nome</label>
+          <input type="text" required id="nome" ng-model="vm.crud.target.nome">
+        </md-input-container>
+      </div>
+      
+      <div layout='row'>
+        <!-- Descricao -->
+        <md-input-container flex>
+          <label>Descrição</label>
+          <textarea ng-model="vm.crud.target.descricao" md-maxlength="150" md-select-on-focus></textarea>
+        </md-input-container>
+      </div>
+      <div layout='row'>
+        <!-- Custo Loja -->
+        <div layout='column' >
+  
+          <md-input-container flex>
+            <label>Custo (R$)</label>
+            <input type="number" step="0.01" min="0" required id="custoLoja" ng-model="vm.crud.target.custoLoja">
+          </md-input-container>
+        </div>
+        <!-- Custo Cliente -->
+        <div layout='column' layout-align='start end'>
+          <h3>{{ vm.crud.target.custoLoja * 5 }} Pontos</h3>
+        </div>
+      </div>
+      <!-- </md-content> -->
+      <!-- Form Actions -->
+      <div layout='row' layout-align='space-between center'>
+        <md-button class="md-raised md-warn" ng-click='vm.crud.clear()' ng-show='vm.crud.target.isNew'>
+          <i class="fa fa-trash"></i>Limpar
+        </md-button>
+        <md-button class="md-raised md-warn" ng-click='vm.form.hide()' ng-show='!vm.crud.target.isNew'>
+          <i class="fa fa-angle-double-left"></i>Cancelar
+        </md-button>
+        <md-button class="md-raised md-primary" ng-click='vm.crud.add()'>
+          Salvar<i class="fa fa-angle-double-right"></i>
+        </md-button>
+      </div>
+    </div>
+
+
+  </form>
+</div>
